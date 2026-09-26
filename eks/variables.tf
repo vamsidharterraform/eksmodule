@@ -18,6 +18,11 @@ variable "subnet_ids" {
   type        = list(string)
 }
 
+variable "environemnt" {
+  description = "value of the environment"
+  type        = string
+}
+
 variable "node_groups" {
   description = "EKS node group configuration"
   type = map(object({

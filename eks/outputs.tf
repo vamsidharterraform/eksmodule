@@ -18,6 +18,11 @@ output "cluster_version" {
   value       = aws_eks_cluster.main.version
 }
 
+output "cluster_nodegroup_version" {
+  description = "EKS node group Kubernetes version"
+  value       = aws_eks_node_group.main.version
+}
+
 output "oidc_provider_arn" {
   description = "OIDC Provider ARN"
   value       = aws_iam_openid_connect_provider.eks.arn

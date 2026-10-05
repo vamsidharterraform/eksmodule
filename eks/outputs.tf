@@ -19,8 +19,12 @@ output "cluster_version" {
 }
 
 output "cluster_nodegroup_version" {
-  description = "EKS node group Kubernetes version"
-  value       = aws_eks_node_group.main.version
+  description = "EKS node group Kubernetes versions"
+
+  value = {
+    for name, nodegroup in aws_eks_node_group.main :
+    name => nodegroup.version
+  }
 }
 
 output "oidc_provider_arn" {

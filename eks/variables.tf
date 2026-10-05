@@ -8,6 +8,11 @@ variable "cluster_version" {
   type        = string
 }
 
+variable "cluster_nodegroup_version" {
+  description = "nodegroup Kubernetes version"
+  type        = string
+}
+
 variable "vpc_id" {
   description = "VPC ID"
   type        = string

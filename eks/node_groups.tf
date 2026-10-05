@@ -6,6 +6,7 @@ resource "aws_eks_node_group" "main" {
 
   node_role_arn = aws_iam_role.node.arn
   subnet_ids    = var.subnet_ids
+  version = var.cluster_nodegroup_version
 
   instance_types = each.value.instance_types
   capacity_type  = each.value.capacity_type

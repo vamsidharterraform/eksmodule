@@ -199,7 +199,7 @@ data "aws_iam_policy_document" "external_secrets" {
     ]
 
     resources = [
-      "arn:${data.aws_partition.current.partition}:secretsmanager:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:secret:dev/eks/myapp-*"
+      "arn:${data.aws_partition.current.partition}:secretsmanager:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:secret:dev/eks/myapp-*"
     ]
   }
 }
